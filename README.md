@@ -59,7 +59,7 @@ A research-grade Python project for preprocessing mineral reflectance spectra fr
 spectral_database_project/
 ├── config/
 │   └── settings.yaml              # Configuration file
-├── data/
+├── data/                          # The full dataset is not stored in this GitHub
 │   ├── raw/
 │   │   ├── RELAB/
 │   │   ├── RRUFF/
