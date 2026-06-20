@@ -1,0 +1,82 @@
+# Spectral Database Preprocessing Configuration
+# =============================================
+
+# Wavelength parameters (nanometers)
+wavelength:
+  min: 400
+  max: 2500
+  step: 1
+  unit: "nm"
+
+# Savitzky-Golay smoothing parameters
+smoothing:
+  window_length: 11
+  polyorder: 3
+
+# Normalization and interpolation
+processing:
+  normalization_method: "minmax"  # Options: minmax, stddev, max, robust_scale
+  interpolation_method: "linear"  # Options: linear, cubic, quadratic
+
+# Quality control thresholds
+quality_control:
+  max_missing_fraction: 0.20  # Allow up to 20% missing values
+  min_spectrum_points: 50      # Minimum number of valid wavelength points
+  max_noise_level: 0.05        # Maximum allowed noise (reflectance units)
+  detect_outliers: true
+  outlier_threshold: 3.0       # Standard deviations for outlier detection
+
+# Data source paths
+data_paths:
+  raw_relab: "data/raw/RELAB"
+  raw_rruff: "data/raw/RRUFF"
+  raw_usgs: "data/raw/USGS"
+  cleaned: "data/cleaned"
+  standardized: "data/standardized"
+  continuum_removed: "data/continuum_removed"
+  derivatives: "data/derivatives"
+  metadata: "data/metadata"
+  outputs: "outputs"
+  logs: "logs"
+
+# Logging configuration
+logging:
+  level: "INFO"  # Options: DEBUG, INFO, WARNING, ERROR, CRITICAL
+  log_file: "logs/preprocessing.log"
+  log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# Processing options
+processing_options:
+  save_intermediate: true       # Save results after each processing stage
+  skip_existing: false          # Skip already processed files
+  n_jobs: 1                     # Number of parallel jobs (-1 for all cores)
+  chunk_size: 100               # Batch size for processing
+
+# Minerals to process
+minerals:
+  - Grossular
+  - Pyrope
+  - Spinel
+  - Andradite
+  - Augite
+  - Diopside
+  - Muscovite
+  - Orthoclase
+  - Enstatite
+  - Olivine
+  - Hypersthene
+  - Zircon
+  - Rutile
+  - Albite
+  - Microcline
+  - Apatite
+  - Calcite
+  - Dolomite
+  - Quartz
+  - Beryl
+
+# Report generation
+reporting:
+  generate_plots: true
+  plot_format: "png"
+  include_detailed_stats: true
