@@ -7,7 +7,7 @@ This project uses large spectral datasets that are **not stored in this GitHub r
 The full dataset is located at:
 
 ```
-My Drive\PhD\symbolic_regression_crystal_symmetry_spectral_complexity\data
+https://drive.google.com/drive/folders/1teRB8PcGcusi1vv0On_fIcETlsjSJ3fV
 ```
 
 ## Structure (expected)
